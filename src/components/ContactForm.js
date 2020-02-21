@@ -1,5 +1,9 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
+import 'mutationobserver-shim';
+//import { act } from 'react-dom/test-utils';
+
+
 
 const ContactForm = () => {
   const [data, setData] = useState();
@@ -12,7 +16,7 @@ const ContactForm = () => {
 
   return (
     <div className="App">
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form onSubmit={handleSubmit(onSubmit)} data-testid="form">
         <div>
           <label htmlFor="firstName">First Name*</label>
           <input
